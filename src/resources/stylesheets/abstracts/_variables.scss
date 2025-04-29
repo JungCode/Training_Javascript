@@ -1,0 +1,45 @@
+@use "functions" as *;
+
+// Font family
+$primary-font: Inter;
+
+// Breakpoints
+
+$medium: 768px;
+$extra-lager: 1200px;
+
+$mobile: calc($medium - 1px);
+$tablet: calc($extra-lager - 1px);
+
+$main-spacing: pxToRem(-0.58);
+
+//general colors
+$primary-color: #615EF0;
+$border-color:#00000014;
+$tag-border-color:#CBD5E0;
+$muted-border-color:#bbbfc3;
+$primary-btn-color:linear-gradient(to bottom, #7a5fff, #5c40f7);
+
+// background colors
+$yellow-tag-bg-color:#FEEBC8;
+$green-tag-bg-color:#C6F6D5;
+$light-green-tag-bg-color:#F0FFF4;
+$purple-tag-bg-color:#FAF5FF;
+$blue-tag-bg-color:#EBF8FF;
+$red-tag-bg-color:#FFF5F5;
+$actived-box-bg-color:#615EF00F;
+$number-tag-bg-color:#EDF2F7;
+$search-bg-color:#F3F3F3;
+
+$background-color:#FFF;
+
+// text colors
+$yello-tag-text-color:#DD6B20;
+$green-tag-text-color:#38A169;
+$gray-tag-text-color:#718096;
+$muted-text-color:#575d65;
+$preview-text-color:#00000066;
+$dark-text-color: #000000;
+
+// hover colors
+$primary-hover-color: #4643ec;

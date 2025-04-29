@@ -1,0 +1,24 @@
+@use "../abstracts/" as *;
+
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+body {
+  font-family: $primary-font;
+  font-display: swap;
+  font-weight: 400;
+  font-size: pxToRem(14);
+  line-height: pxToRem(24);
+  color: $dark-text-color;
+  background-color: $background-color;
+
+  @include tablet {
+    font-size: pxToRem(11);
+    line-height: pxToRem(16);
+  }
+  button{
+    font-family: $primary-font;
+  }
+}
