@@ -2,7 +2,8 @@
 
 .login{
   &__container{
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     @include flex(flex, column, center, center);
     padding: 0px 10px;
   }
@@ -41,15 +42,20 @@
     &-form{
       @include flex(flex, column, start, center);
 
-      & label{
+      &-label{
         font-size: pxToRem(12);
+        &--pass{
+          margin-top: 15px;
+        }
       }
+
       & input{
-        padding: 6px;
+        padding: 6px 10px;
         border-radius: 7px;
         border: $muted-border-color solid 1px;
         width: 100%;
       }
+
       & button{
         width: 100%;
         margin-top: 30px;

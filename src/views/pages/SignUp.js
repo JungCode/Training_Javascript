@@ -1,6 +1,6 @@
 import { IcLogo } from '../../resources/assets/icons';
 
-const Login = () =>{
+const SignUp = () =>{
   return `<section class="container">
     <main class="login__container fade-in" id="content">
       <div class="login__card">
@@ -10,12 +10,14 @@ const Login = () =>{
           </figure>
         </div>
         <div class="login__card-header">
-          <h1>Sign in to Chat-App</h1>
-          <p>Welcome back! Please sign in to continue</p>
+          <h1>Create your account</h1>
+          <p>Welcome! Please fill in the details to get started.</p>
         </div>
         <form class="login__card-form">
           <label for="email-input" class="login__card-form-label">Email address</label>
           <input id="email-input" type="email" placeholder="Enter your email address"/>
+          <label for="password-input" class="login__card-form-label login__card-form-label--pass">Password</label>
+          <input id="password-input" type="password" placeholder="Enter your password"/>
           <button type="submit">CONTINUE</button>
         </form>
         <div class="login__card-signout-container">
@@ -25,8 +27,8 @@ const Login = () =>{
             <hr>
           </div>
           <div class="login__card-signout-button">
-            <p>Don't have an account?</p>
-            <a href="/sign-up">Sign up</a>
+            <p>Already have an account?</p>
+            <a href="/login">Sign in</a>
           </div>
         </div>
       </div>
@@ -34,4 +36,4 @@ const Login = () =>{
   </section>`
 }
 
-export default Login;
+export default SignUp;
