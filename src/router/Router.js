@@ -7,7 +7,7 @@ export default class Router {
   addRoute(pathName, component) {
     this.routes.push({ pathName, component });
   }
-
+  
   changeRoute(){
     const currPathName = window.location.pathname;
     if(currPathName === '/'){
@@ -26,5 +26,9 @@ export default class Router {
         }
       }
     }
+  }
+
+  getRoutes(){
+    return this.routes;
   }
 }
