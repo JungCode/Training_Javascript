@@ -1,4 +1,4 @@
-import { initRoute } from "./modules/routerConfig";
+import { initRoute, handleSPA } from "./modules/routerConfig";
 import Router from "../router/Router";
 class AppView{
   constructor(){
@@ -6,7 +6,9 @@ class AppView{
     this.route = new Router();
     initRoute(this.route);
     this.route.changeRoute();
+    handleSPA(this.route);
   }
+
 }
 
 export default AppView
