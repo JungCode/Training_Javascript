@@ -4,17 +4,17 @@
   "version": "0.0.0",
   "source": "src/resources/index.html",
   "scripts": {
-    "start": "parcel --port 1234 src/resources/index.html --public-url /",
+    "start": "parcel",
     "build": "parcel build"
   },
   "devDependencies": {
     "@parcel/transformer-inline-string": "^2.14.4",
     "@parcel/transformer-sass": "^2.14.4",
     "parcel": "^2.14.0",
-    "svgo": "^3.3.2"
-  },
-  "dependencies": {
+    "svgo": "^3.3.2",
     "eslint": "^9.25.1",
     "prettier": "^3.5.3"
+  },
+  "dependencies": {
   }
 }
