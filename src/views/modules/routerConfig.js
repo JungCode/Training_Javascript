@@ -1,21 +1,29 @@
-import Login from "../pages/Login";
-import SignUp from "../pages/SignUp";
+import AuthController from "../../controllers/auth.controller";
+import AuthModel from "../../models/auth.model";
+import LoginView from "../pages/LoginView";
+import SignUpView from "../pages/SignUpView";
 
-export const initRoute = (route) => {
-  route.addRoute('/login', Login());
-  route.addRoute('/sign-up', SignUp());
+export const initRoute = (routes) => {
+  const loginView = new LoginView();
+  const signUpView = new SignUpView();
 
+  routes.addRoute('/login', loginView.getView());
+  routes.addRoute('/sign-up', signUpView.getView());
+
+  new AuthController(loginView, new AuthModel());
+  new AuthController(signUpView, new AuthModel());
 }
 
-export const handleSPA = (route) => {
-  const content = document.querySelector('#content');
-  const allAnchor = document.querySelectorAll('a');
-  allAnchor.forEach((a) => {
-    a.addEventListener('click', (event)=>{
-      event.preventDefault();
-      content.classList.remove('fade-in');
-      history.pushState({}, '', a.href);
-      route.changeRoute();
-    });
-  });
+export const handleSPA = (routes) => {
+  const routesList = routes.getRoutes();
+  for(const route of routesList){
+    const anchors = route.component.querySelectorAll('a');
+    for(const a of anchors){
+      a.addEventListener('click', (e) =>{
+        e.preventDefault();
+        history.pushState({}, '', a.href);
+        routes.changeRoute();
+      })
+    }
+  }
 }
