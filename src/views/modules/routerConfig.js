@@ -1,5 +1,17 @@
-export const initRoute = (routes) => {
+import AuthController from "../../controllers/auth.controller";
+import AuthModel from "../../models/auth.model";
+import LoginView from "../pages/LoginView";
+import SignUpView from "../pages/SignUpView";
 
+export const initRoute = (routes) => {
+  const loginView = new LoginView();
+  const signUpView = new SignUpView();
+
+  routes.addRoute('/login', loginView.getView());
+  routes.addRoute('/sign-up', signUpView.getView());
+
+  new AuthController(loginView, new AuthModel());
+  new AuthController(signUpView, new AuthModel());
 }
 
 export const handleSPA = (routes) => {
